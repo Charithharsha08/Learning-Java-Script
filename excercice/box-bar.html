@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boxes</title>
+    <style>
+      .container {
+        display: flex;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        /* background-color: gray; */
+        border: 2px solid black;
+        margin: 10px;
+      }
+      /* .box :active {
+        background-color: red;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box" id="1"></div>
+      <div class="box" id="2"></div>
+      <div class="box" id="3"></div>
+      <div class="box" id="4"></div>
+      <div class="box" id="5"></div>
+    </div>
+    <script>
+      let Boxes = document.querySelectorAll(".box");
+      let currentBox = 0;
+      function changeColor() {
+        Boxes.forEach((box) => {
+          box.style.backgroundColor = "gray";
+        });
+      }
+      setInterval(() => {
+        changeColor();
+        Boxes[currentBox].style.backgroundColor = "red";
+        currentBox = (currentBox + 1) % Boxes.length;
+        pastBox = (currentBox - 1) % Boxes.length;
+
+        // Boxes[currentBox - 1].style.backgroundColor = "yellow";
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery basic</title>
+  </head>
+  <body>
+    <h1 id="heading">jQuery basic</h1>
+
+    <p class="paragraph">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut cumque
+      excepturi ea eos nemo iste vel perferendis aliquam, voluptatum
+      necessitatibus libero totam quis ipsam nobis beatae doloribus illo
+      asperiores recusandae.
+    </p>
+    <p class="paragraph2">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. A adipisci modi
+      illo, aliquam reiciendis recusandae dolor eveniet necessitatibus sunt
+      quidem earum totam expedita dicta doloremque officia. Ab non tempora
+      cumque.
+    </p>
+    <button id="btnSave">click me</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        $("#heading").css("color", "red");
+        $(".paragraph").css("backgroundColor", "green");
+        $("button").css("backgroundColor", "PURPLE").css("color", "white");
+
+        $(".paragraph2")
+          .on("mouseenter", () => {
+            $(".paragraph2").css("backgroundColor", "red");
+          })
+          .on("mouseleave", () => {
+            $(".paragraph2").css("backgroundColor", "yellow");
+          });
+      });
+    </script>
+  </body>
+</html>
